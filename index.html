@@ -466,6 +466,24 @@ button.card{font:inherit;color:inherit;text-align:left;width:100%;cursor:zoom-in
 }
 @media (max-width:380px){ .cbtn strong{font-size:.92rem} }
 
+
+/* ===== Dải chữ thương hiệu nhỏ trong phần đầu ===== */
+.hero-grid>*{min-width:0}
+.mini-strip{margin-top:26px;max-width:min(520px,100%);min-width:0}
+.mini-strip .ls-viewport{max-width:100%}
+.mini-strip .ls-label{text-align:left;font-size:.72rem;letter-spacing:.16em;margin-bottom:10px}
+.mini-strip .ls-track{animation-duration:22s}
+.mini-strip:hover .ls-track{animation-play-state:paused}
+.mini-strip .ls-track ul{gap:34px;padding:0 17px}
+.mini-strip .ls-track li{height:30px}
+.wm{font-size:1.25rem;line-height:1;white-space:nowrap}
+.wm.vng{color:#ff6a13;font-weight:800;letter-spacing:.02em}
+.wm.cointalk{color:#fff;font-weight:700;letter-spacing:.04em}.wm.cointalk b{color:#38d2f0;font-weight:800}
+.wm.u2u{color:#2fd3a0;font-weight:800;letter-spacing:.04em}
+.wm.topebox{color:#ff3b3b;font-weight:800;font-style:italic;letter-spacing:-.01em}
+.wm.bybit,.wm.okx{font-size:1.2rem}
+@media (max-width:639px){ .mini-strip{margin-top:20px} .wm{font-size:1.1rem} }
+
 /* ===== Song ngữ VI/EN ===== */
 t-en{display:none}
 html.lang-en t-en{display:inline}
@@ -576,17 +594,15 @@ html.lang-en t-vi{display:none}
           <a class="btn btn-primary" href="#du-an"><t-vi>Xem mình đã làm gì</t-vi><t-en>See what I've done</t-en> <span aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#lien-he"><t-vi>Làm quen</t-vi><t-en>Say hi</t-en></a>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DẢI LOGO -->
-  <section class="logo-strip" aria-label="Đã chiến cùng / Teamed up with">
-    <p class="ls-label"><t-vi>Đã chiến cùng</t-vi><t-en>Teamed up with</t-en></p>
-    <div class="ls-viewport">
-      <div class="ls-track">
-        <ul><li><img src="assets/logo/vng-trong.png" alt="VNG" height="48"></li><li><img src="assets/logo/cointalk-trong.png" alt="CoinTalk" height="48"></li><li><img src="assets/logo/u2u-trong.png" alt="U2U Network" height="48"></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><img src="assets/logo/topebox-trong.png" alt="Topebox" height="48"></li><li><span class="wm okx">OKX</span></li></ul>
-        <ul aria-hidden="true"><li><img src="assets/logo/vng-trong.png" alt="" height="48"></li><li><img src="assets/logo/cointalk-trong.png" alt="" height="48"></li><li><img src="assets/logo/u2u-trong.png" alt="" height="48"></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><img src="assets/logo/topebox-trong.png" alt="" height="48"></li><li><span class="wm okx">OKX</span></li></ul>
+        <div class="mini-strip reveal" style="--i:5">
+          <p class="ls-label"><t-vi>Đã chiến cùng</t-vi><t-en>Teamed up with</t-en></p>
+          <div class="ls-viewport">
+            <div class="ls-track">
+              <ul><li><span class="wm vng">VNG</span></li><li><span class="wm cointalk"><b>Coin</b>Talk</span></li><li><span class="wm u2u">U2U</span></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><span class="wm topebox">topebox</span></li><li><span class="wm okx">OKX</span></li></ul>
+              <ul aria-hidden="true"><li><span class="wm vng">VNG</span></li><li><span class="wm cointalk"><b>Coin</b>Talk</span></li><li><span class="wm u2u">U2U</span></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><span class="wm topebox">topebox</span></li><li><span class="wm okx">OKX</span></li></ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
