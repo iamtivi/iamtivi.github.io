@@ -418,6 +418,54 @@ button.card{font:inherit;color:inherit;text-align:left;width:100%;cursor:zoom-in
 /* Nút viết hoa */
 .btn{text-transform:uppercase;letter-spacing:.04em}
 
+
+/* ===== Dải logo chạy ngang ===== */
+.logo-strip{padding:22px 0 26px;border-block:1px solid var(--line);background:rgba(255,255,255,.025)}
+.ls-label{text-align:center;font-size:.8rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.ls-viewport{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.ls-track{display:flex;width:max-content;animation:lsScroll 28s linear infinite}
+.logo-strip:hover .ls-track{animation-play-state:paused}
+.ls-track ul{display:flex;align-items:center;gap:64px;list-style:none;margin:0;padding:0 32px}
+.ls-track li{display:flex;align-items:center;height:48px;flex:none}
+.ls-track img{height:44px;width:auto;opacity:.92;filter:drop-shadow(0 2px 10px rgba(0,0,0,.35));transition:transform .3s,opacity .3s}
+.ls-track li:hover img{transform:scale(1.08);opacity:1}
+.wm{font-weight:800;font-size:1.9rem;letter-spacing:.04em;line-height:1}
+.wm.bybit{color:#fff}.wm.bybit i{font-style:normal;color:#f7a600}
+.wm.okx{color:#fff;letter-spacing:.12em}
+@keyframes lsScroll{to{transform:translateX(-50%)}}
+@media (max-width:639px){
+  .logo-strip{padding:16px 0 18px}
+  .ls-track ul{gap:40px;padding:0 20px}
+  .ls-track img{height:34px}
+  .wm{font-size:1.45rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .ls-track{animation:none;width:100%;justify-content:center}
+  .ls-track ul{flex-wrap:wrap;justify-content:center;row-gap:16px}
+  .ls-track ul[aria-hidden]{display:none}
+}
+/* ===== Icon thế mạnh chuyển động ===== */
+.svc .icon span{display:inline-block;will-change:transform}
+.ic-pop span{animation:icPop 2.6s ease-in-out infinite}
+.ic-wiggle span{animation:icWiggle 2.2s ease-in-out infinite;transform-origin:50% 90%}
+.ic-chat span{animation:icChat 2.4s ease-in-out infinite}
+.ic-clap span{animation:icClap 1.8s ease-in-out infinite;transform-origin:20% 80%}
+.svc .icon{position:relative;overflow:visible}
+.svc .icon::after{content:"";position:absolute;inset:-4px;border-radius:18px;border:2px solid rgba(255,255,255,.18);animation:icRing 2.6s ease-out infinite;pointer-events:none}
+.svc:hover .icon span{animation-duration:.9s}
+@keyframes icPop{0%,100%{transform:translateY(0) scale(1)}40%{transform:translateY(-5px) scale(1.12)}60%{transform:translateY(0) scale(.96)}}
+@keyframes icWiggle{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(-14deg)}20%{transform:rotate(12deg)}30%{transform:rotate(-8deg)}40%{transform:rotate(5deg)}}
+@keyframes icChat{0%,100%{transform:translateY(0) scale(1)}25%{transform:translateY(-3px) scale(1.1)}50%{transform:translateY(0) scale(1)}70%{transform:scale(1.06)}}
+@keyframes icClap{0%,55%,100%{transform:rotate(0)}65%{transform:rotate(-16deg)}75%{transform:rotate(4deg)}85%{transform:rotate(-6deg)}}
+@keyframes icRing{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
+/* ===== Email 1 hàng ===== */
+.cbtn strong{white-space:nowrap;overflow-wrap:normal;word-break:normal}
+@media (min-width:640px){
+  .contact-btns{max-width:900px;grid-template-columns:1fr 1fr 1.45fr}
+  .cbtn strong{font-size:1rem}
+}
+@media (max-width:380px){ .cbtn strong{font-size:.92rem} }
+
 /* ===== Song ngữ VI/EN ===== */
 t-en{display:none}
 html.lang-en t-en{display:inline}
@@ -518,7 +566,6 @@ html.lang-en t-vi{display:none}
         <div class="frame">
           <img src="anh-dai-dien.jpg" alt="Trong Vo (Tivi)" width="800" height="1000" fetchpriority="high">
         </div>
-        <div class="badge-float"><span class="dot" aria-hidden="true"></span><t-vi>TP.HCM · Từ 2016</t-vi><t-en>HCMC · Since 2016</t-en></div>
       </div>
       <div>
         <p class="hello reveal"><t-vi>Yo, mình là 👋</t-vi><t-en>Hey, I'm 👋</t-en></p>
@@ -529,17 +576,17 @@ html.lang-en t-vi{display:none}
           <a class="btn btn-primary" href="#du-an"><t-vi>Xem mình đã làm gì</t-vi><t-en>See what I've done</t-en> <span aria-hidden="true">→</span></a>
           <a class="btn btn-ghost" href="#lien-he"><t-vi>Làm quen</t-vi><t-en>Say hi</t-en></a>
         </div>
-        <div class="worked reveal" style="--i:5">
-          <p><t-vi>Đã chiến cùng</t-vi><t-en>Teamed up with</t-en></p>
-          <ul class="logo-row">
-            <li><img src="assets/logo/vng.webp" alt="VNG" width="56" height="56"></li>
-            <li><img src="assets/logo/cointalk.webp" alt="CoinTalk" width="56" height="56"></li>
-            <li><img src="assets/logo/u2u.webp" alt="U2U Network" width="56" height="56"></li>
-            <li><img src="assets/logo/topebox.webp" alt="Topebox" width="56" height="56"></li>
-            <li><span class="brand bybit">BYBIT</span></li>
-            <li><span class="brand okx">OKX</span></li>
-          </ul>
-        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DẢI LOGO -->
+  <section class="logo-strip" aria-label="Đã chiến cùng / Teamed up with">
+    <p class="ls-label"><t-vi>Đã chiến cùng</t-vi><t-en>Teamed up with</t-en></p>
+    <div class="ls-viewport">
+      <div class="ls-track">
+        <ul><li><img src="assets/logo/vng-trong.png" alt="VNG" height="48"></li><li><img src="assets/logo/cointalk-trong.png" alt="CoinTalk" height="48"></li><li><img src="assets/logo/u2u-trong.png" alt="U2U Network" height="48"></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><img src="assets/logo/topebox-trong.png" alt="Topebox" height="48"></li><li><span class="wm okx">OKX</span></li></ul>
+        <ul aria-hidden="true"><li><img src="assets/logo/vng-trong.png" alt="" height="48"></li><li><img src="assets/logo/cointalk-trong.png" alt="" height="48"></li><li><img src="assets/logo/u2u-trong.png" alt="" height="48"></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><img src="assets/logo/topebox-trong.png" alt="" height="48"></li><li><span class="wm okx">OKX</span></li></ul>
       </div>
     </div>
   </section>
@@ -556,13 +603,13 @@ html.lang-en t-vi{display:none}
           <div class="num"><span class="count" data-to="4.5" data-dec="1">4,5</span><t-vi> triệu</t-vi><t-en>M</t-en></div>
           <div class="label"><t-vi>view tự nhiên</t-vi><t-en>organic views</t-en></div>
           <p class="note"><t-vi>Facebook 2026 · 0đ quảng cáo</t-vi><t-en>Facebook 2026 · $0 in ads</t-en></p>
-          <span class="see">📸 <t-vi>Xem bằng chứng</t-vi><t-en>See the receipt</t-en></span>
+          <span class="see">📸 <t-vi>Bấm vào để xem ảnh</t-vi><t-en>Tap to view photo</t-en></span>
         </button>
         <button type="button" class="card stat tile-teal s2 reveal tilt zoom" style="--i:1" data-img="assets/bang-chung/wsot-2025-top3.webp" data-cap="Bybit WSOT 2025 · Squad Showdown: CoinTalk VN hạng 3 thế giới, thưởng 288.000 USDT" data-cap-en="Bybit WSOT 2025 · Squad Showdown: CoinTalk VN ranked 3rd worldwide, 288,000 USDT prize">
           <div class="num">TOP <span class="count" data-to="3">3</span></div>
           <div class="label"><t-vi>thế giới</t-vi><t-en>worldwide</t-en></div>
           <p class="note"><t-vi>Bybit WSOT 2025 · đội CoinTalk VN · 288.000 USDT</t-vi><t-en>Bybit WSOT 2025 · Team CoinTalk VN · 288,000 USDT</t-en></p>
-          <span class="see">📸 <t-vi>Xem bằng chứng</t-vi><t-en>See the receipt</t-en></span>
+          <span class="see">📸 <t-vi>Bấm vào để xem ảnh</t-vi><t-en>Tap to view photo</t-en></span>
         </button>
         <div class="card stat tile-orange reveal tilt" style="--i:2">
           <div class="num"><span class="count" data-to="400">400</span>K+</div>
@@ -585,22 +632,22 @@ html.lang-en t-vi{display:none}
       <h2 id="svc-title" class="sec-title reveal"><t-vi>Mấy việc mình <span class="grad">làm ngon nhất</span></t-vi><t-en>Stuff I'm <span class="grad">really good at</span></t-en></h2>
       <div class="bento svcs">
         <article class="card svc v1 tile-hero reveal tilt">
-          <div class="icon" aria-hidden="true">👥</div>
+          <div class="icon ic-pop" aria-hidden="true"><span>👥</span></div>
           <h3><t-vi>Dựng &amp; giữ lửa cộng đồng</t-vi><t-en>Building communities &amp; keeping them lit</t-en></h3>
           <ul class="tags"><li>Telegram</li><li>Discord</li><li>X</li><li>Minigame</li><li>Airdrop</li><li>Livestream</li></ul>
         </article>
         <article class="card svc v2 reveal tilt" style="--i:1">
-          <div class="icon" aria-hidden="true">🎙️</div>
+          <div class="icon ic-wiggle" aria-hidden="true"><span>🎙️</span></div>
           <h3><t-vi>Host AMA, X Spaces</t-vi><t-en>Hosting AMAs &amp; X Spaces</t-en></h3>
           <p class="kpi"><t-vi>30+ buổi · 300+ người/buổi</t-vi><t-en>30+ sessions · 300+ live each</t-en></p>
         </article>
         <article class="card svc v3 reveal tilt" style="--i:2">
-          <div class="icon" aria-hidden="true">💬</div>
+          <div class="icon ic-chat" aria-hidden="true"><span>💬</span></div>
           <h3><t-vi>Trực inbox, chăm khách</t-vi><t-en>Inbox &amp; customer care</t-en></h3>
           <p class="kpi"><t-vi>Rep 98–100% trong 1–2 phút</t-vi><t-en>98–100% answered in 1–2 min</t-en></p>
         </article>
         <article class="card svc v4 tile-teal reveal tilt" style="--i:3">
-          <div class="icon" aria-hidden="true">🎬</div>
+          <div class="icon ic-clap" aria-hidden="true"><span>🎬</span></div>
           <h3><t-vi>Làm kênh video ngắn bằng AI</t-vi><t-en>Short-form AI video channels</t-en></h3>
           <div class="flow">
             <span><t-vi>Ý tưởng</t-vi><t-en>Idea</t-en></span><i aria-hidden="true">→</i><span><t-vi>Kịch bản</t-vi><t-en>Script</t-en></span><i aria-hidden="true">→</i><span><t-vi>Dựng</t-vi><t-en>Edit</t-en></span><i aria-hidden="true">→</i><span><t-vi>Đăng</t-vi><t-en>Post</t-en></span>
@@ -795,7 +842,7 @@ html.lang-en t-vi{display:none}
           </a>
           <a class="cbtn" href="mailto:trongvomarketing@gmail.com">
             <span class="ci mail" aria-hidden="true">@</span>
-            <span><small>Email</small><strong>trongvomarketing<wbr>@gmail.com</strong></span>
+            <span><small>Email</small><strong>trongvomarketing@gmail.com</strong></span>
           </a>
         </div>
       </div>
