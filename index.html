@@ -484,6 +484,18 @@ button.card{font:inherit;color:inherit;text-align:left;width:100%;cursor:zoom-in
 .wm.bybit,.wm.okx{font-size:1.2rem}
 @media (max-width:639px){ .mini-strip{margin-top:20px} .wm{font-size:1.1rem} }
 
+
+/* ===== Logo thương hiệu thật trong dải chạy ===== */
+.mini-strip .ls-track li{height:34px}
+.bl{display:block;height:22px;width:auto;opacity:.92;transition:opacity .25s,transform .25s}
+.mini-strip li:hover .bl{opacity:1;transform:scale(1.08)}
+.bl.vng{height:20px}
+.bl.u2u{height:24px}
+.bl.bybit{height:20px}
+.bl.okx{height:20px}
+.bl.tope{height:30px}
+.bl.ct{height:30px;width:30px;border-radius:50%;box-shadow:0 0 0 1.5px rgba(255,255,255,.25)}
+
 /* ===== Song ngữ VI/EN ===== */
 t-en{display:none}
 html.lang-en t-en{display:inline}
@@ -598,8 +610,8 @@ html.lang-en t-vi{display:none}
           <p class="ls-label"><t-vi>Đã chiến cùng</t-vi><t-en>Teamed up with</t-en></p>
           <div class="ls-viewport">
             <div class="ls-track">
-              <ul><li><span class="wm vng">VNG</span></li><li><span class="wm cointalk"><b>Coin</b>Talk</span></li><li><span class="wm u2u">U2U</span></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><span class="wm topebox">topebox</span></li><li><span class="wm okx">OKX</span></li></ul>
-              <ul aria-hidden="true"><li><span class="wm vng">VNG</span></li><li><span class="wm cointalk"><b>Coin</b>Talk</span></li><li><span class="wm u2u">U2U</span></li><li><span class="wm bybit">BYB<i>I</i>T</span></li><li><span class="wm topebox">topebox</span></li><li><span class="wm okx">OKX</span></li></ul>
+              <ul><li><img class="bl vng" src="assets/logo/brand/vng.svg" alt="VNG"></li><li><img class="bl ct" src="assets/logo/cointalk.webp" alt="CoinTalk"></li><li><img class="bl u2u" src="assets/logo/brand/u2u.svg" alt="U2U Network"></li><li><img class="bl bybit" src="assets/logo/brand/bybit.svg" alt="Bybit"></li><li><img class="bl tope" src="assets/logo/brand/topebox.png" alt="Topebox"></li><li><img class="bl okx" src="assets/logo/brand/okx.svg" alt="OKX"></li></ul>
+              <ul aria-hidden="true"><li><img class="bl vng" src="assets/logo/brand/vng.svg" alt=""></li><li><img class="bl ct" src="assets/logo/cointalk.webp" alt=""></li><li><img class="bl u2u" src="assets/logo/brand/u2u.svg" alt=""></li><li><img class="bl bybit" src="assets/logo/brand/bybit.svg" alt=""></li><li><img class="bl tope" src="assets/logo/brand/topebox.png" alt=""></li><li><img class="bl okx" src="assets/logo/brand/okx.svg" alt=""></li></ul>
             </div>
           </div>
         </div>
